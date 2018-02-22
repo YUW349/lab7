@@ -10,4 +10,14 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// your code here
+	$('button').click(analytics);
+
+	
 }
+
+
+function analytics(e){
+        e.preventDefault();
+		ga("send","event","like","click");
+		console.log("u suck");
+	}

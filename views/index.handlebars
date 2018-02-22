@@ -8,7 +8,15 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/introHCI.css" rel="stylesheet">
-  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114578698-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114578698-1');
+</script>
 </head>
 
 <body>
@@ -19,6 +27,31 @@
 		</div>
 
 		<h4>Projects</h4>
+		{{#if viewAlt}}
+
+		Min!<button class="likeBtn"> Like </button>
+
+		{{else}}
+
+
+
+			{{#each projects}}
+			<div class="project" id="{{id}}">
+				<div class="thumbnail">
+					<a href="/project/{{id}}">
+						<img src="images/{{image}}" alt="Lorem Pixel image" class="img-responsive">
+						<h4>{{title}}</h4>
+					</a>
+					<div class="likeCtr"><button class="btn btn-default likeBtn">Like</button></div>
+					<div class="details"></div>
+				</div>
+			</div>
+		{{/each}}
+		
+		{{/if}}
+
+
+		{{#if viewAlt}}
 		{{#each projects}}
 			<div class="project" id="{{id}}">
 				<div class="thumbnail">
@@ -31,10 +64,29 @@
 				</div>
 			</div>
 		{{/each}}
+		
+		{{else}}
+		Min!<button class="likeBtn"> Like </button>
+		{{/if}}
+
+
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/introHCI.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114578698-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114578698-1');
+</script>
+
+
+
 </body>
 </html>
